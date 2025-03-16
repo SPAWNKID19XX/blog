@@ -11,9 +11,15 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
-from secret_files.secret_data import SECRET_KEY, PSQL_DB, PSQL_USER, PSQL_USER_PASSWORD
+#from secret_files.secret_data import SECRET_KEY, PSQL_DB, PSQL_USER, PSQL_USER_PASSWORD
 import dj_database_url
 import os
+
+
+SECRET_KEY = os.getenv('SECRET_KEY')
+PSQL_DB = os.getenv('PSQL_DB')
+PSQL_USER = os.getenv('PSQL_USER')
+PSQL_USER_PASSWORD = os.getenv('PSQL_USER_PASSWORD')
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
